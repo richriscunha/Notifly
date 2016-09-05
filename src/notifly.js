@@ -1,3 +1,5 @@
+import TopicDoesNotExistException from './exceptions/TopicDoesNotExistException';
+
 let _handlers = {};
 
 /** A very minimal dependency-free observer pattern implementation. */
@@ -33,13 +35,31 @@ export default class Notifly {
      * @param {string} topic - topic/channel to notify.
      * @param {object} data - data to provide to the callback function of the subscriber.
      *
+     * @throws {TopicDoesNotExistException}
+
      * @example <caption>Notifying a specific topic/channel</caption>
      * Notifly.notify('user.signup', {"name":"John Doe"});
      */
     static notify(topic, data) {
+        if (! this.topicExists(topic))
+          throw new TopicDoesNotExistException(topic + ' topic does not exist.');
         const handlers = _handlers[topic];
         handlers.forEach((callback) => {
             callback(data);
         });
+    }
+    /**
+     * Determines if a specific topic/channel exists.
+     *
+     * @param {string} topic - topic/channel to check.
+     *
+     * @returns {boolean}.
+     *
+     * @throws {TopicDoesNotExistException}
+     * @private
+     */
+    static topicExists(topic) {
+      const channel = _handlers[topic];
+      return channel !== undefined ? true : false;
     }
 }
