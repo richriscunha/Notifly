@@ -1,6 +1,6 @@
 {
   "name": "Notifly",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A very minimal dependency-free observer pattern implementation.",
   "main": "dist/notifly.min.js",
   "scripts": {
@@ -8,7 +8,17 @@
     "clean": "rimraf dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": ["observer pattern", "observer", "design pattern", "pubsub", "pub sub", "pub", "sub", "notifications", "events"],
+  "keywords": [
+    "observer pattern",
+    "observer",
+    "design pattern",
+    "pubsub",
+    "pub sub",
+    "pub",
+    "sub",
+    "notifications",
+    "events"
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/richriscunha/Notifly.git"
