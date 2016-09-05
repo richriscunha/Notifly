@@ -65,5 +65,12 @@ Notify a specific topic/channel with data.
 _Notifying a specific topic/channel_
 
 ```javascript
-Notifly.notify('user.signup', {"name":"John Doe"});
+try {
+ Notifly.notify('user.signup', {"name":"John Doe"});
+} catch (error) {
+ console.log(error.name); // TopicDoesNotExistException
+ console.log(error.message); // user.signup topic does not exist.
+}
 ```
+
+-   Throws **TopicDoesNotExistException**

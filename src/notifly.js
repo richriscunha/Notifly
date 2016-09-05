@@ -38,7 +38,12 @@ export default class Notifly {
      * @throws {TopicDoesNotExistException}
 
      * @example <caption>Notifying a specific topic/channel</caption>
-     * Notifly.notify('user.signup', {"name":"John Doe"});
+     * try {
+     *  Notifly.notify('user.signup', {"name":"John Doe"});
+     * } catch (error) {
+     *  console.log(error.name); // TopicDoesNotExistException
+     *  console.log(error.message); // user.signup topic does not exist.
+     * }
      */
     static notify(topic, data) {
         if (! this.topicExists(topic))
