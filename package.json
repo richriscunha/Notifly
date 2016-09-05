@@ -1,6 +1,6 @@
 {
   "name": "Notifly",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "A very minimal dependency-free observer pattern implementation.",
   "main": "dist/notifly.min.js",
   "scripts": {
