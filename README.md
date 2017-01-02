@@ -1,5 +1,7 @@
 # Notifly
 
+[![npm](https://img.shields.io/npm/dt/Notifly.svg)](https://www.npmjs.com/package/Notifly)
+
 A very minimal dependency-free observer pattern implementation.
 
 
